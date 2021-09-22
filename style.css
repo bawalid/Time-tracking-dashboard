@@ -1,0 +1,416 @@
+/* || Google Font  */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+/* || Gloabl */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  font-family: "Rubik", sans-serif;
+}
+
+a,
+li {
+  display: block;
+  text-decoration: none;
+}
+
+section,
+#dwm, #cards {
+  margin: 0 auto;
+  margin: 1.5rem;
+  padding: 1.5rem;
+}
+
+body {
+  background-color: hsl(226, 43%, 10%);
+}
+
+/* || User card */
+#user {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1rem 1fr;
+  grid-template-columns: auto 1fr;
+  -ms-grid-rows: auto 0 auto;
+  grid-template-areas:
+    "profilePic report"
+    "profilePic username";
+  gap: 0 1rem;
+  border-radius: 0.9rem;
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+  background-color: hsl(246, 80%, 60%);
+}
+
+#user img {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: profilePic;
+  width: 70px;
+  height: 70px;
+  border: 3px solid white;
+  border-radius: 100%;
+}
+#user p {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: report;
+  -ms-grid-row-align: end;
+  align-self: end;
+  color: hsl(236, 100%, 87%);
+}
+#user h1 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: username;
+  color: white;
+  font-weight: 200;
+}
+
+#dwm {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-radius: 0 0 0.9rem 0.9rem;
+  height: 0.2rem;
+  margin-top: 0;
+  padding: 2.5rem 1.5rem 2rem;
+  background-color: hsl(235, 46%, 20%);
+}
+
+#dwm::after {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 1.5rem;
+  left: 0;
+  bottom: 4rem;
+  border-radius: 0 0 0.9rem 0.9rem;
+  background-color: hsl(246, 80%, 60%);
+}
+
+.period-link {
+  color: hsl(235, 45%, 61%);
+  -webkit-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.period-link.active {
+  color: white;
+}
+
+/* || Cards */
+#cards {
+  padding: 0;
+}
+
+#cards > section {
+  position: relative;
+  margin-top: 4rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  z-index: 100;
+}
+
+#cards > section::before {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 3.4rem;
+  top: -2.5rem;
+  border-radius: 0.9rem 0.9rem 0 0;
+  z-index: -1;
+}
+
+/* cards heading styling --- START */
+#cards > section.Work::before {
+  background: url("./images/icon-work.svg") no-repeat, hsl(15, 100%, 70%);
+  background-position-x: calc(100% - 0.9rem);
+  background-position-y: center;
+  background-size: 20%;
+}
+
+#cards > section.Play::before {
+  background: url("./images/icon-play.svg") no-repeat, hsl(195, 74%, 62%);
+  background-position-x: calc(100% - 0.9rem);
+  background-position-y: center;
+  background-size: 20%;
+}
+
+#cards > section.Study::before {
+  background: url("./images/icon-study.svg") no-repeat, hsl(348, 100%, 68%);
+  background-position-x: calc(100% - 0.9rem);
+  background-position-y: center;
+  background-size: 20%;
+}
+
+#cards > section.Exercise::before {
+  background: url("./images/icon-exercise.svg") no-repeat, hsl(145, 58%, 55%);
+  background-position-x: calc(100% - 0.9rem);
+  background-position-y: center;
+  background-size: 20%;
+}
+
+#cards > section.Social::before {
+  background: url("./images/icon-social.svg") no-repeat, hsl(264, 64%, 52%);
+  background-position-x: calc(100% - 0.9rem);
+  background-position-y: center;
+  background-size: 20%;
+}
+
+#cards > section.Self.Care::before {
+  background: url("./images/icon-self-care.svg") no-repeat, hsl(43, 84%, 65%);
+  background-position-x: calc(100% - 0.9rem);
+  background-position-y: center;
+  background-size: 20%;
+}
+/* cards heading styling --- END */
+
+#cards > section .card-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 0 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto 1rem auto;
+  grid-template-areas:
+    "card-title points"
+    "current previous";
+  gap: 1rem 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 0.9rem;
+  background-color: hsl(235, 46%, 20%);
+}
+
+#cards > section h3,
+h2 {
+  color: white;
+}
+
+#cards > section h2 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  font-weight: 200;
+  font-size: 2.5rem;
+  grid-area: current;
+}
+
+#cards > section p {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: previous;
+  color: hsl(236, 100%, 87%);
+  -ms-grid-column-align: end;
+  justify-self: end;
+  text-align: right;
+}
+
+#cards > section .points {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: points;
+  width: 1.5rem;
+  height: 0.5rem;
+  background-color: hsl(236, 100%, 87%);
+  -webkit-mask-image: url(./images/icon-ellipsis.svg);
+  mask-image: url(./images/icon-ellipsis.svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -ms-grid-column-align: end;
+  justify-self: end;
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    grid-template-areas:
+      "user cards"
+      "dwm cards";
+    -ms-grid-columns: 25% 1fr;
+    grid-template-columns: 25% 1fr;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+  }
+
+  #user {
+    grid-area: user;
+    display: inline;
+  }
+
+  #user p {
+    margin-top: 2rem;
+  }
+
+  #user h1 {
+    font-size: 2.5rem;
+  }
+
+  #dwm {
+    grid-area: dwm;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  #dwm::after {
+    top: -1rem;
+  }
+
+  #cards {
+    grid-area: cards;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1.4rem 1fr 1.4rem 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1.4rem 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.4rem;
+  }
+
+  #cards > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+
+  #cards > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+
+  #cards > *:nth-child(3) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+  }
+
+  #cards > *:nth-child(4) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+
+  #cards > *:nth-child(5) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+  }
+
+  #cards > *:nth-child(6) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 5;
+  }
+
+  #cards > section {
+    margin-top: 2.5rem;
+    margin-bottom: 0;
+    height: 12.5rem;
+  }
+
+  #cards > section .card-container {
+    -ms-grid-columns: 1fr 0 auto;
+    grid-template-columns: 1fr auto;
+    -ms-grid-rows: auto 0 auto 0 auto;
+    grid-template-areas:
+      "card-title points"
+      "current points"
+      "previous points";
+    padding: 0 1.5rem;
+    height: 100%;
+    gap: 0;
+    -webkit-transition: 0.7s background-color;
+    -o-transition: 0.7s background-color;
+    transition: 0.7s background-color;
+  }
+
+  #cards > section .card-container:hover {
+    cursor: pointer;
+    background-color: hsl(236, 45%, 27%);
+  }
+
+  #cards > section h3 {
+    margin-top: 2rem;
+  }
+
+  #cards > section h2 {
+    margin-top: 3rem;
+  }
+
+  #cards > section p {
+    -ms-grid-column-align: start;
+    justify-self: start;
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+
+  #cards > section .points {
+    -ms-flex-item-align: start;
+    -ms-grid-row-align: start;
+    align-self: start;
+    margin-top: 2.7rem;
+    -webkit-transition: 0.7s background-color;
+    -o-transition: 0.7s background-color;
+    transition: 0.7s background-color;
+  }
+
+  #cards > section .points:hover {
+    cursor: pointer;
+    background-color: white;
+  }
+
+  #cards > section h2 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+
+  #cards > section p {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+  }
+
+  #cards > section .points {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 3;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #user {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  #dwm {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  #cards {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+  }
+}
